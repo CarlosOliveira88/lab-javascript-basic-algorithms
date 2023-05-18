@@ -1,3 +1,13 @@
+body{
+    background-image: url(https://www.jornaldafranca.com.br/wp-content/uploads/2021/09/ceu-claro.jpg);
+backface-visibility: visible;
+    background-attachment: fixed;
+    background-repeat: round;
+    background-size: 100%;
+}
+
+
+
 .caja-grande{
     margin: 5%;
     padding: 3%;

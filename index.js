@@ -93,8 +93,40 @@ function navigatoReverseName() {
   document.getElementById("navigatorName").innerHTML = nombreReverso;
 }
 
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-const sum = numbers.reduce(
-  (valorAcumulado, valorAtual) => valorAcumulado + valorAtual
-);
-console.log(sum);
+function ordenLexicografico() {
+  let hacker1 = document.getElementById("driver").value;
+  let hacker2 = document.getElementById("navigator").value;
+  let result = hacker1.localeCompare(hacker2);
+
+  /*O método localeComparecompara as strings lexicograficamente 
+  y retorna um número negativo se hacker1 deve ser clasificado antes de hacker2,
+   um número positivo se hacker2deve ser clasificado antes de hacker1, 
+   ou zero se os nomes forem iguais.*/
+
+  if (result < 0) {
+    document.getElementById("driverName").innerHTML =
+      "The driver's name goes first.";
+    document.getElementById("navigatorName").innerHTML = hacker1;
+  } else if (result > 0) {
+    document.getElementById("driverName").innerHTML =
+      "Yo, the navigator goes first, definitely.";
+    document.getElementById("navigatorName").innerHTML = hacker2;
+  } else {
+    document.getElementById("driverName").innerHTML =
+      "What?! You both have the same name?";
+    document.getElementById("navigatorName").innerHTML =
+      hacker1 + " & " + hacker2;
+  }
+
+  // eu tentei assim mas nao funcionou
+  // if (hacker1 > hacker2) {
+  //   document.getElementById("driverName").innerHTML =
+  //     "The driver's name goes first.";
+  // } else if (hacker1 < hacker2) {
+  //   document.getElementById("driverName").innerHTML =
+  //     "Yo, the navigator goes first, definitely.";
+  // } else {
+  //   document.getElementById("driverName").innerHTML =
+  //     "What?! You both have the same name?";
+  // }
+}
